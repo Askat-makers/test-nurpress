@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { newsContext } from '../../contexts/NewsContext';
+import Loading from '../Loading';
 
 
 const Section2Right = () => {
@@ -13,7 +15,7 @@ const Section2Right = () => {
           <div className="row">
             {news ? (
               <div className="col-xs-6 col-num-0"> <a href="/obschestvo/180255_vozvraschenie_vshkolu_nadolgoli/"
-                className="title"> <img src={news.results[news.results.length - 1].post_image[0].image} alt="img"/> <span>{news.results[news.results.length - 1].title_post}</span> </a>
+                className="title"> <img src={news.results[news.results.length - 1].post_image[0].image} alt="img" /> <span>{news.results[news.results.length - 1].title_post}</span> </a>
               </div>
             ) : (null)}
             <div className="col-xs-6 col-num-1">
@@ -23,7 +25,7 @@ const Section2Right = () => {
                       15.01.2021</div>
                   </div>
                   <div className="col-md-5 centerra-value">
-                    <div className="usd">USD 11,45 <img src="img/up.gif" alt="img"/>
+                    <div className="usd">USD 11,45 <img src="img/up.gif" alt="img" />
                     </div>
                   </div>
                   <div className="row">
@@ -51,12 +53,16 @@ const Section2Right = () => {
             <div className="row">
               {news ? (
                 news.results.map(item => (
-                  <div key={item.id} className="col-xs-6 col-num-0"> <a
-                    href="/vlast/179900_zachem_nam_premer_ekspertyi_ovozmojnyih_kandidatah_nadoljnost_glavyi_kabmina/"
-                    className="title"> <img src={item.post_image[0].image} alt="img" /> <span>{item.title_post}</span> </a>
+                  <div key={item.id} className="col-xs-6 col-num-0">
+                    <Link to={`/news-detail${item.id}`} className="title">
+                      <img src={item.post_image[0].image} alt="img" />
+                      <span>{item.title_post}</span>
+                    </Link>
                   </div>
                 ))
-              ) : (null)
+              ) : (
+                <Loading/>
+              )
               }
             </div>
           </div>

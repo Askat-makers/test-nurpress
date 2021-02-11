@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { newsContext } from '../../contexts/NewsContext';
 import Footer from '../Footer';
+import Loading from '../Loading';
 import Navbar from '../Navbar';
 import Pagination from '../Pagination';
 
@@ -23,12 +24,6 @@ const SearchPageBody = ({ props }) => {
             <h1 className="pageTitle">ПОИСК ПО САЙТУ</h1>
             <div className="row lineNews">
               <div className="col-xs-12 hidden-print">
-                {/* <div className="lineTitle"> Лента новостей <a href="https://24.kg/english/"
-                  className="pull-right btn btn-default newsBries" role="button">news brief</a> <a
-                    href="https://24.kg/kyrgyzcha/" className="pull-right btn btn-default newsBries" style={{ marginRight: 5 }}
-                    role="button">кыргызча</a>
-                  <div className="line"></div>
-                </div> */}
               </div>
               <div className="col-xs-12">
                 {newsBySearch ? (
@@ -51,7 +46,7 @@ const SearchPageBody = ({ props }) => {
                     )
 
                 ) : (
-                    null
+                    <Loading/>
                   )
                 }
               </div>

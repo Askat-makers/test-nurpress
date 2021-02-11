@@ -5,6 +5,7 @@ import Navbar from '../Navbar'
 import Footer from '../Footer'
 import { Link, useHistory } from 'react-router-dom';
 import Pagination from '../Pagination'
+import Loading from '../Loading';
 
 const NewsByCategoryPageBody = ({ props }) => {
   const { newsByCategory, news } = useContext(newsContext)
@@ -57,7 +58,9 @@ const NewsByCategoryPageBody = ({ props }) => {
                   </div>
                 </div>
               </>
-            ) : (null)}
+            ) : (
+              <Loading/>
+            )}
             <div className="row lineNews">
               <div className="col-xs-12 hidden-print">
                 <div className="lineTitle"> Лента новостей <a href="https://24.kg/english/"
@@ -77,14 +80,18 @@ const NewsByCategoryPageBody = ({ props }) => {
                       </div>
                     </div>
                   ))
-                ) : (null)
+                ) : (
+                  <Loading/>
+                )
                 }
                 {
                   newsByCategory ? (
                     <div className="col-xs-12 hidden-print">
                       <Pagination number={newsByCategory.total_pages} handleClick={handleClick} />
                     </div>
-                  ) : (null)
+                  ) : (
+                    <Loading/>
+                  )
                 }
               </div>
             </div>
@@ -131,7 +138,9 @@ const NewsByCategoryPageBody = ({ props }) => {
         {
           news ? (
             <PopulationAndEconomics newsArr={news.results.slice(-4)} />
-          ) : (null)
+          ) : (
+            <Loading/>
+          )
         }
       </div>
       <Footer />

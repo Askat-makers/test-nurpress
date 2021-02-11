@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { newsContext } from '../../contexts/NewsContext';
 import Pagination from '../Pagination';
+import Loading from '../Loading'
 const Section2Left = () => {
   const { news } = useContext(newsContext)
   function getHours(date) {
@@ -61,7 +62,9 @@ const Section2Left = () => {
                     <Pagination number={news.total_pages} handleClick={handleClick}/>
                   </div>
                 </>
-              ) : (null)
+              ) : (
+                <Loading/>
+              )
               }
             </div>
             <div className="row hidden-print">

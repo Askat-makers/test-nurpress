@@ -15,9 +15,6 @@ const NewsByCategoryPage = props => {
     getNewsByCategory(props.match.params.category)
     getNews()
   }, [props.match.params.category])
-  // useEffect(() => {
-  //   getNewsByCategory(props.history.location.search)
-  // }, [props.history.location.search])
 
   return (
     <>

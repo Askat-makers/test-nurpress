@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { newsContext } from '../../contexts/NewsContext';
+import Loading from '../Loading';
 import PopulationAndEconomics from '../PopulationAndEconomics';
 
 const DetailsSection1 = () => {
@@ -22,7 +23,6 @@ const DetailsSection1 = () => {
   }
   function handleClick() {
     if (!comment.full_name || !comment.comment) return alert("Введите корректные данные")
-    // obj.comments.push(comment)
     postComment(comment)
     setComment({ full_name: "", comment: "" })
   }
@@ -49,12 +49,6 @@ const DetailsSection1 = () => {
                           <span style={{ marginLeft: 4 }}>{newsDetails.category[0].title_category}</span>
                         </Link>
                       </div>
-                      {/* <div className="col-xs-8 text-right newsDate hidden-xs"><span itemProp="datePublished" content="2021-01-20\">10:14, 20 января 2021</span>, Бишкек - <span itemProp="publisher" itemScope="" itemType="http://schema.org/Organization"><span itemProp="name">24.kg</span>
-                      <span itemProp="logo" itemScope="" itemType="http://schema.org/ImageObject">
-                      </span>
-                    </span>, <span itemProp="author" itemScope="" itemType="http://schema.org/Person"><span itemProp="name"
-                      className="text-nowrap">Руслан ХАРИЗОВ</span></span>
-                    </div> */}
                     </div>
                     <h1 itemProp="name" className="newsTitle">{newsDetails.title_post}</h1>
                     <div className="row">
@@ -66,7 +60,6 @@ const DetailsSection1 = () => {
                       </div>
                     </div> <span itemProp="image" itemScope="" itemType="http://schema.org/ImageObject">
                     </span>
-                    {/* <noindex> */}
                     <div className="row hidden-print">
                       <div className="col-xs-12 social social-links"> <a rel="nofollow" target="_blank" href="https://vk.com/share.php?url=https://24.kg/obschestvo/180523/"><i className="fa fa-vk"
                         aria-hidden="true"></i></a>
@@ -76,7 +69,6 @@ const DetailsSection1 = () => {
                         <a rel="nofollow" target="_blank" href="https://telegram.me/share/url?url=https://24.kg/obschestvo/180523/text=%D0%A3%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D0%B0%20%D0%BF%D1%80%D0%BE%D1%81%D1%8F%D1%82%20%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C%20%D1%83%D0%B2%D0%BE%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0"><i className="fa fa-telegram" aria-hidden="true"></i></a> <a rel="nofollow" target="_blank" href="https://wa.me/?text=https://24.kg/obschestvo/180523/"><i className="fa fa-whatsapp"
                           aria-hidden="true"></i></a> </div>
                     </div>
-                    {/* </noindex> */}
                     <div className="cont" itemProp="articleBody">
                       <div className="poTeme">
                         <div className="title">Читайте по теме</div>
@@ -137,7 +129,6 @@ const DetailsSection1 = () => {
                           <button onClick={() => handleClick(newsDetails)} style={{ width: "100%", padding: "10px 0", backgroundColor: "#064b67", color: "white", marginTop: 5 }}>Отправить комментарии</button>
                         </div>
                         <div className="title">
-                          {/* <span>САЛАМ</span> */}
                         </div>
                       </div>
                     </div>
@@ -192,7 +183,9 @@ const DetailsSection1 = () => {
                             </div>
                           </div>
                         ))
-                      ) : (null)}
+                      ) : (
+                        <Loading/>
+                      )}
                     </div>
                   </div>
                   <div className="row">
@@ -241,9 +234,12 @@ const DetailsSection1 = () => {
             </div>
             <div id="css-loaded"></div>
           </>
-        ) : (null)
-      ) : (null)}
-      {/* </div> */}
+        ) : (
+          <Loading/>
+        )
+      ) : (
+        <Loading/>
+      )}
     </>
   );
 };

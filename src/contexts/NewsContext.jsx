@@ -58,7 +58,8 @@ const NewsContextProvider = ({ children }) => {
   }
 
   async function getNews(page) {
-    const { data } = await axios(`${NEWS_API}/posts${page}`)
+    const { data } = await axios(`${NEWS_API}/posts/${page}`)
+    console.log(data)
     dispatch({
       type: "GET_NEWS",
       payload: data
@@ -89,7 +90,7 @@ const NewsContextProvider = ({ children }) => {
     })
   }
 
-  async function getNewsByCategory(category, page=1) {
+  async function getNewsByCategory(category, page = 1) {
     const { data } = await axios(`${CATEGORIES_API}${category}`)
     dispatch({
       type: "GET_NEWS_BY_CATEGORY",

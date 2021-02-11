@@ -18353,9 +18353,9 @@ header .currency span {
   display: inline
 }
 
-.blockNews.right-list .col-num-0 {
+/* .blockNews.right-list .col-num-0 {
   padding-left: 0
-}
+} */
 
 .blockNews.right-list .col-num-1 {
   padding-right: 0

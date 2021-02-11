@@ -7,47 +7,20 @@ const Navbar = ({ props }) => {
 
   const { getCurrency, currencies, getCategories, categories } = useContext(newsContext)
   const [date, setDate] = useState({})
-
-  setInterval(() => {
-    let newDate = new Date()
-    let day = newDate.getDate()
-    let month = newDate.getMonth()
-    if (month == 0) {
-      month = '01'
-    }
-    else if (month < 10) {
-      month = `0${month}`
-    }
-    let seconds = newDate.getSeconds()
-    let min = newDate.getMinutes()
-    let hours = newDate.getHours()
-    let year = newDate.getFullYear()
-    let obj = {
-      day,
-      month,
-      min,
-      hours,
-      year,
-      seconds
-    }
-    setDate(obj)
-  }, 1000);
-
   useEffect(() => {
     getCategories()
     getCurrency()
   }, [])
 
   // _____________________________________________________________________________
-  // search 
-  // const [searchWord, setSearchWord] = useState("")
   const history = useHistory()
   const [searchWord, setSearchWord] = useState("")
   function handleInput(e) {
     setSearchWord(e.target.value)
   }
   function handleClick(e) {
-    e.stopPropagation()
+    e.preventDefault()
+    if(!searchWord) return
     history.push(`/search/${searchWord}`)
   }
 
@@ -133,7 +106,7 @@ const Navbar = ({ props }) => {
               <div className="weather"> <span className="hidden-xs"> {date.year}.{date.month}.{date.day}  <span style={{ textTransform: "capitalize" }}>
               </span> </span> <span className="hidden-sm hidden-md hidden-lg"><span
                 style={{ textTransform: "capitalize" }}> пн. </span> </span><br /> <span
-                  className="hidden-sm hidden-xs">Бишкекское время</span> <span className="hidden-md hidden-lg">Время</span> {date.hours}.{date.min}.{date.seconds}
+                  className="hidden-sm hidden-xs">Бишкекское время</span> <span className="hidden-md hidden-lg">Время</span> 
               </div>
             </div>
             <div className="col-xs-5 col-sm-5 col-md-4 pdl-0 text-right">

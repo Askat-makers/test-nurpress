@@ -10,7 +10,6 @@ const contentStyle = {
   lineHeight: '160px',
   textAlign: 'center',
   background: '#364d79',
-  // zIndex: -1
   width: "100%"
 };
 
