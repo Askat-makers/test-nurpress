@@ -20,13 +20,13 @@ const Navbar = ({ props }) => {
   }
   function handleClick(e) {
     e.preventDefault()
-    if(!searchWord) return
+    if (!searchWord) return
     history.push(`/search/${searchWord}`)
   }
 
   return (
     <>
-      <div className="topBanner hidden-print">
+      {/* <div className="topBanner hidden-print">
         <div className="container">
           <div id="3b_w8"
             data-ox-phs="{36:{min:1200},51:{min:992,max:1199},52:{min:768,max:991},53:{max:767}}"
@@ -51,12 +51,15 @@ const Navbar = ({ props }) => {
             data-ox-phs="{132:{min:1200},130:{min:992,max:1199},131:{min:768,max:991}}"
             style={{ display: 'none' }}></div>
         </div>
-      </div>
+      </div> */}
       <header className="row hidden-print">
-        <div className="col-lg-2 col-md-2 col-sm-2 col-xs-5 logo"> <Link to="/"> <img className="visible-lg visible-xs"
-          src={nurpressLogo} alt="www.24.kg - КЫРГЫЗСТАН" /><img className="visible-md" src="img/logo-md.png"
-            alt="www.24.kg - КЫРГЫЗСТАН" /><img className="visible-sm" src="img/logo-sm.png" alt="www.24.kg - КЫРГЫЗСТАН" />
-        </Link> </div>
+        <div className="col-lg-2 col-md-2 col-sm-2 col-xs-5 logo">
+          <Link to="/">
+            <img className="visible-lg visible-xs" src={nurpressLogo} alt="www.24.kg - КЫРГЫЗСТАН" />
+            {/* <img className="visible-md" src={nurpressLogo} alt="www.24.kg - КЫРГЫЗСТАН" />
+            <img className="visible-sm" src={nurpressLogo} alt="www.24.kg - КЫРГЫЗСТАН" /> */}
+          </Link>
+        </div>
         <div className="col-lg-2 col-md-2 col-sm-2 lang hidden-xs">
           <div> <a href="/kyrgyzcha/">Кыр</a> <a href="/english/">Eng</a> <a href="/archive/ru/" rel="nofollow">Архив</a>
           </div>
@@ -73,14 +76,8 @@ const Navbar = ({ props }) => {
             <a target="_blank" href="https://www.youtube.com/channel/UCbmZoqKCRKuXv8ejoL7kYCg" rel="nofollow">
               <i className="fa fa-youtube-play" aria-hidden="true"></i>
             </a>
-            <a target="_blank" href="https://ok.ru/ia24.kgkyr/topics">
-              <i className="fa fa-odnoklassniki" aria-hidden="true"></i>
-            </a>
             <a target="_blank" href="https://www.instagram.com/nur.press/?hl=ru">
               <i className="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a target="_blank" href="https://t.me/news24kg/">
-              <i className="fa fa-telegram" aria-hidden="true"></i>
             </a>
             <a target="_blank" href="https://wa.me/996555312024">
               <i className="fa fa-whatsapp" aria-hidden="true"></i>
@@ -90,7 +87,7 @@ const Navbar = ({ props }) => {
             <form onSubmit={handleClick} >
               <div className="input-group"> <span className="input-group-btn"> <button className="btn btn-default" type="submit"> <i
                 className="fa fa-search" aria-hidden="true"></i> </button> </span>
-                <input value={searchWord} onChange={handleInput} type="text" id="" className="form-control" placeholder="Поиск" />
+                <input value={searchWord} onChange={handleInput} type="text" className="form-control" placeholder="Поиск" />
               </div>
             </form>
           </div>
@@ -106,7 +103,7 @@ const Navbar = ({ props }) => {
               <div className="weather"> <span className="hidden-xs"> {date.year}.{date.month}.{date.day}  <span style={{ textTransform: "capitalize" }}>
               </span> </span> <span className="hidden-sm hidden-md hidden-lg"><span
                 style={{ textTransform: "capitalize" }}> пн. </span> </span><br /> <span
-                  className="hidden-sm hidden-xs">Бишкекское время</span> <span className="hidden-md hidden-lg">Время</span> 
+                  className="hidden-sm hidden-xs">Бишкекское время</span> <span className="hidden-md hidden-lg">Время</span>
               </div>
             </div>
             <div className="col-xs-5 col-sm-5 col-md-4 pdl-0 text-right">
@@ -130,7 +127,7 @@ const Navbar = ({ props }) => {
             <div className="title"><i className="fa fa-search" aria-hidden="true"></i> Поиск по сайту <span
               className="close closeSearchForm"><i className="fa fa-times" aria-hidden="true"></i></span> </div>
             <form id="w13" onSubmit={handleClick}>
-              <input value={searchWord} onChange={handleInput} type="text" id="" className="form-control" name="SearchForm[text]" placeholder="Поиск" />
+              <input value={searchWord} onChange={handleInput} type="text" className="form-control" name="SearchForm[text]" placeholder="Поиск" />
               <button type="submit" className="btn btn-default">Найти</button>
             </form>
           </div>

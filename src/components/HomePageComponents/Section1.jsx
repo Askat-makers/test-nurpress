@@ -32,7 +32,7 @@ const Section1 = () => {
           <div id="3b_w5" className="banFixHeight"
             data-ox-phs="{38:{min:1200},57:{min:992,max:1199},58:{min:768,max:991},59:{max:767}}">
             <div style={{ width: "100%", height: 285 }}>
-              <img src="https://ox.24.kg/www/images/45c854e87683ff1de86228631e2599fc.png" alt="img" />
+              <img src="http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkV5fXqZ6chiAebLtlQ_JuxaaKTM5SRkZCeTgDn6uOyic" alt="img" />
             </div>
           </div>
         </div>

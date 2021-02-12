@@ -9,7 +9,7 @@ const Pagination = (props) => {
     <>
       <ul className="pagination">
         {arr.map(item => (
-            <li key={item.id + "pagination"} onClick={props.handleClick} className="prev">
+            <li style={{cursor: "pointer"}} key={item.id} onClick={props.handleClick} className="prev">
               <span>
                 {item}
               </span>

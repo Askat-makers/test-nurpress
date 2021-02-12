@@ -36,14 +36,14 @@ const Section2Right = () => {
             </div> */}
             <div className="row">
               <div className="col-xs-12 col-num-0 col-num-1">
-                <a href="/press_konferentsii/180272_press-konferentsiya/" className="title">
+                <a href="callto://+996312625652" className="title">
                   <img src="https://sun9-24.userapi.com/c850532/v850532335/1ac866/al3OEUsv9xQ.jpg" style={{width: "100%", height: "auto"}} alt="img" />
                 </a>
               </div>
             </div>
             <div className="row">
               {news ? (
-                news.results.map(item => (
+                news.results.slice(-10).map(item => (
                   <div key={item.id} className="col-xs-6 col-num-0">
                     <Link to={`/news-detail${item.id}`} className="title">
                       <img id="section-2-right-img" src={item.post_image[0].image} alt="img" />

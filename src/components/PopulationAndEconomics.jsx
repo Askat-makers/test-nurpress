@@ -20,8 +20,8 @@ const PopulationAndEconomics = ({ newsArr }) => {
         </div>
         <div className="row blockNews">
           <div className="row">
-            {arr.slice(-4).map(item => (
-              <div key={item.id} className="col-sm-3 col-xs-6 ">
+            {arr.map(item => (
+              <div key={item.id + "population-news"} className="col-sm-3 col-xs-6 ">
                 <Link to={`/news-detail${item.id}`} className="title">
                   <img src={item.post_image[0].image} alt="PHOTO" />
                   <span>{item.title_post}</span></Link>

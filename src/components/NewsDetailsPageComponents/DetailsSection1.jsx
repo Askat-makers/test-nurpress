@@ -154,14 +154,14 @@ const DetailsSection1 = () => {
                       <div className="one">
                         {newsDetails.comments.length ? (
                           newsDetails.comments.map(item => (
-                            <>
+                            <React.Fragment key={item.id + "comment"}>
                               <div className="title">
                                 <h4 style={{ fontWeight: 700 }}>{item.full_name}</h4>
                               </div>
                               <div>
                                 <span>{item.comment}</span>
                               </div>
-                            </>
+                            </React.Fragment>
                           ))
                         ) : (
                             <>
