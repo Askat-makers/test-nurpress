@@ -12,8 +12,10 @@ const NewsByCategoryPage = props => {
 
   const { getNewsByCategory, newsByCategory, getNews, news } = useContext(newsContext)
   useEffect(() => {
+    getNews(props.history.location.search)
+  }, [props.history.location.search])
+  useEffect(() => {
     getNewsByCategory(props.match.params.category)
-    getNews()
   }, [props.match.params.category])
 
   return (

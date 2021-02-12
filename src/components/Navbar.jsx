@@ -129,8 +129,8 @@ const Navbar = ({ props }) => {
           <div id="searchForm">
             <div className="title"><i className="fa fa-search" aria-hidden="true"></i> Поиск по сайту <span
               className="close closeSearchForm"><i className="fa fa-times" aria-hidden="true"></i></span> </div>
-            <form id="w13" action="/poisk_po_sajtu/" method="get">
-              <input type="text" id="searchform-text" className="form-control" name="SearchForm[text]" placeholder="Поиск" />
+            <form id="w13" onSubmit={handleClick}>
+              <input value={searchWord} onChange={handleInput} type="text" id="" className="form-control" name="SearchForm[text]" placeholder="Поиск" />
               <button type="submit" className="btn btn-default">Найти</button>
             </form>
           </div>

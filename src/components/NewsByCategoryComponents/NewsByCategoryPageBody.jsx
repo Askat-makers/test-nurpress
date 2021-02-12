@@ -8,7 +8,7 @@ import Pagination from '../Pagination'
 import Loading from '../Loading';
 
 const NewsByCategoryPageBody = ({ props }) => {
-  const { newsByCategory, news } = useContext(newsContext)
+  const { newsByCategory, news, getNews } = useContext(newsContext)
   let categoryId = props.match.params.category
   function defineCategory(obj) {
     let newArr = obj[0].category.filter(item => item.id == categoryId)
@@ -18,6 +18,9 @@ const NewsByCategoryPageBody = ({ props }) => {
       return "Последние новости"
     }
   }
+  useEffect(() => {
+    getNews()
+  }, [])
   // _________________________________________
 
   const history = useHistory()

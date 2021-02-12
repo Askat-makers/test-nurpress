@@ -17448,7 +17448,7 @@ header .currency span {
   padding: 0 11px;
   margin-top: 15px;
   border-radius: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   min-height: inherit;
   background: #0e5777
 }
@@ -17488,8 +17488,14 @@ header .currency span {
   border-bottom-color: #fff
 }
 
+
 .mgb40 {
+  margin-top: 30px;
   margin-bottom: 40px
+}
+
+.mgtop30{
+  margin-top: 0;
 }
 
 .mgb30 {
@@ -17612,6 +17618,12 @@ header .currency span {
   .mainNews .mainNewsOne .one .h2, .mainNews .mainNewsOne .one h2 {
     font-size: 20px;
     width: 90%
+  }
+  #section-ad-block{
+    margin-bottom: 0 !important;
+  }
+  .section-ad-block{
+    margin-bottom: 0 !important;
   }
 }
 
@@ -18902,6 +18914,9 @@ div.num, span.num {
   }
   .mainNews .mainNewsOne img {
     min-height: 250px
+  }
+  #section-ad-block{
+    height: 30px !important;
   }
 }
 

@@ -15,10 +15,14 @@ const HomePage = (props) => {
   }, [])
 
 
-  const { getNews, getEconomicsNews } = useContext(newsContext)
+  const { getNews, getEconomicsNews, getAd } = useContext(newsContext)
   useEffect(() => {
     getNews(props.history.location.search)
   }, [props.history.location.search])
+
+  useEffect(() => {
+    getAd()
+  })
   return (
     <div>
       <HomePageBody />

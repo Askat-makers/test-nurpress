@@ -3,6 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { newsContext } from '../../contexts/NewsContext';
 import Loading from '../Loading';
 import PopulationAndEconomics from '../PopulationAndEconomics';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DetailsSection1 = () => {
 
@@ -22,15 +24,21 @@ const DetailsSection1 = () => {
     setComment(obj)
   }
   function handleClick() {
-    if (!comment.full_name || !comment.comment) return alert("Введите корректные данные")
+    if (!comment.full_name || !comment.comment) return notify1("Введите корректные данные")
     postComment(comment)
     setComment({ full_name: "", comment: "" })
+    notify()
   }
 
   function fakeFunction() {
     getNewsByTag(newsDetails.tags[0])
     return 10
   }
+
+  // 
+  const notify = () => toast.dark("Ваш комментарий отправлен на модерацию");
+  const notify1 = (arg1) => toast.dark(arg1);
+  //
 
 
   return (
@@ -39,6 +47,7 @@ const DetailsSection1 = () => {
         news ? (
 
           <>
+            <ToastContainer />
             <div className="container" id={fakeFunction()}>
               <div className="row" id="content-wrapper">
                 <div className="col-sm-8 col-xs-12">
@@ -184,8 +193,8 @@ const DetailsSection1 = () => {
                           </div>
                         ))
                       ) : (
-                        <Loading/>
-                      )}
+                          <Loading />
+                        )}
                     </div>
                   </div>
                   <div className="row">
@@ -235,11 +244,11 @@ const DetailsSection1 = () => {
             <div id="css-loaded"></div>
           </>
         ) : (
-          <Loading/>
-        )
+            <Loading />
+          )
       ) : (
-        <Loading/>
-      )}
+          <Loading />
+        )}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { createContext, useReducer } from 'react';
 import { act } from 'react-dom/test-utils';
-import { CATEGORIES_API, CURRENCY_API, NEWS_API } from '../helpers/const';
+import { CATEGORIES_API, CURRENCY_API, NEWS_API, AD_API } from '../helpers/const';
 
 export const newsContext = createContext()
 
@@ -13,7 +13,8 @@ const INIT_STATE = {
   newsDetails: null,
   newsByCategory: null,
   newsBySearch: null,
-  newsByTag: null
+  newsByTag: null,
+  ad: []
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -34,6 +35,8 @@ const reducer = (state = INIT_STATE, action) => {
       return { ...state, newsBySearch: action.payload }
     case "GET_NEWS_BY_TAG":
       return { ...state, newsByTag: action.payload }
+    case "GET_AD": 
+      return { ...state, ad: action.payload }
     default:
       return { state }
   }
@@ -56,10 +59,8 @@ const NewsContextProvider = ({ children }) => {
       payload: array
     })
   }
-
   async function getNews(page) {
     const { data } = await axios(`${NEWS_API}/posts/${page}`)
-    console.log(data)
     dispatch({
       type: "GET_NEWS",
       payload: data
@@ -122,6 +123,16 @@ const NewsContextProvider = ({ children }) => {
     await axios.post(`${NEWS_API}/comments/`, comment)
   }
 
+  // 
+
+  async function getAd(){
+    const {data} = await axios(`${AD_API}`)
+    dispatch({
+      type: "GET_AD",
+      payload: data.results
+    })
+  }
+
   return (
     <newsContext.Provider value={{
       news: state.news,
@@ -132,6 +143,7 @@ const NewsContextProvider = ({ children }) => {
       newsByCategory: state.newsByCategory,
       newsBySearch: state.newsBySearch,
       newsByTag: state.newsByTag,
+      ad: state.ad,
       getNews,
       getEconomicsNews,
       getCurrency,
@@ -140,7 +152,8 @@ const NewsContextProvider = ({ children }) => {
       getNewsByCategory,
       getNewsBySearch,
       getNewsByTag,
-      postComment
+      postComment,
+      getAd
     }}>
       {children}
     </newsContext.Provider>
