@@ -29,11 +29,6 @@ const Section2Right = () => {
                 </div>
               </>
             ) : (null)}
-            {/* <div className="row" id="section-2-right-20px">
-              <div id="a1_w8" className="col-xs-12 hidden-print col-num-0 col-num-1"
-                data-ox-phs="{122:{min:1200},121:{min:992,max:1199},123:{min:768,max:991},124:{max:767}}"
-                style={{ display: "none" }}></div>
-            </div> */}
             <div className="row">
               <div className="col-xs-12 col-num-0 col-num-1">
                 <a href="callto://+996312625652" className="title">

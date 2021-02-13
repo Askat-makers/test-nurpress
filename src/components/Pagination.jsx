@@ -8,8 +8,8 @@ const Pagination = (props) => {
   return (
     <>
       <ul className="pagination">
-        {arr.map(item => (
-            <li style={{cursor: "pointer"}} key={item.id} onClick={props.handleClick} className="prev">
+        {arr.map((item, index) => (
+            <li style={{cursor: "pointer"}} key={index + "pagination"} onClick={props.handleClick} className="prev">
               <span>
                 {item}
               </span>

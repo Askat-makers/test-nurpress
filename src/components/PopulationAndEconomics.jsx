@@ -5,8 +5,6 @@ import Section3 from './HomePageComponents/Section3';
 const PopulationAndEconomics = ({ newsArr }) => {
 
   newsArr.sort((a, b) => a.views > b.views ? 1 : -1)
-  const arr = newsArr.slice(-4)
-
   
   return (
     <>
@@ -20,7 +18,7 @@ const PopulationAndEconomics = ({ newsArr }) => {
         </div>
         <div className="row blockNews">
           <div className="row">
-            {arr.map(item => (
+            {newsArr.slice(-4).map(item => (
               <div key={item.id + "population-news"} className="col-sm-3 col-xs-6 ">
                 <Link to={`/news-detail${item.id}`} className="title">
                   <img src={item.post_image[0].image} alt="PHOTO" />

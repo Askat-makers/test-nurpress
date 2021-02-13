@@ -72,21 +72,36 @@ const DetailsSection1 = () => {
                     <div className="row hidden-print">
                       <div className="col-xs-12 social social-links"> <a rel="nofollow" target="_blank" href="https://vk.com/share.php?url=https://24.kg/obschestvo/180523/"><i className="fa fa-vk"
                         aria-hidden="true"></i></a>
-                        <a rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=%D0%A3%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D0%B0%20%D0%BF%D1%80%D0%BE%D1%81%D1%8F%D1%82%20%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C%20%D1%83%D0%B2%D0%BE%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0url=https://24.kg/obschestvo/180523/"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a rel="nofollow" target="_blank" href="https://www.facebook.com/dialog/feed?app_id=942470665830749redirect_uri=https://24.kg/obschestvo/180523/link=https://24.kg/obschestvo/180523/"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="https://www.odnoklassniki.ru/dk?st.cmd=addSharest.s=1st.comments=%D0%A3%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D0%B0%20%D0%BF%D1%80%D0%BE%D1%81%D1%8F%D1%82%20%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C%20%D1%83%D0%B2%D0%BE%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0st._surl=https://24.kg/obschestvo/180523/"><i className="fa fa-odnoklassniki" aria-hidden="true"></i></a>
-                        <a rel="nofollow" target="_blank" href="https://telegram.me/share/url?url=https://24.kg/obschestvo/180523/text=%D0%A3%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D0%B0%20%D0%BF%D1%80%D0%BE%D1%81%D1%8F%D1%82%20%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C%20%D1%83%D0%B2%D0%BE%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0"><i className="fa fa-telegram" aria-hidden="true"></i></a> <a rel="nofollow" target="_blank" href="https://wa.me/?text=https://24.kg/obschestvo/180523/"><i className="fa fa-whatsapp"
-                          aria-hidden="true"></i></a> </div>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100052561304911" rel="nofollow">
+                          <i className="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a target="_blank" href="https://twitter.com/MOYoMYd01Buh1Ex" rel="nofollow">
+                          <i className="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/channel/UCbmZoqKCRKuXv8ejoL7kYCg" rel="nofollow">
+                          <i className="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/nur.press/?hl=ru">
+                          <i className="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a target="_blank" href="https://wa.me/996555312024">
+                          <i className="fa fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                      </div>
                     </div>
                     <div className="cont" itemProp="articleBody">
                       <div className="poTeme">
                         <div className="title">Читайте по теме</div>
-                        <div className="one"><a href="https://24.kg/obschestvo/180255_vozvraschenie_vnbspshkolu_nadolgonbspli/">Возвращение
-                  в школу. Надолго ли? </a></div>
+                        {
+                          newsByTag ? (
+                            <div className="one">
+                              <Link to={`/news-detail${newsByTag.results[newsByTag.results.length - 1].id}`}>{newsByTag.results[newsByTag.results.length - 1].title_post}</Link>
+                            </div>
+                          ) : (null)
+                        }
                       </div>
                       <p>{newsDetails.description}</p>
                     </div>
-                    <noindex>
                       <div className="row hidden-print">
                         <div className="col-xs-12 social social-links"> <a rel="nofollow" target="_blank" href="https://vk.com/share.php?url=https://24.kg/obschestvo/180523/"><i className="fa fa-vk"
                           aria-hidden="true"></i></a>
@@ -96,7 +111,6 @@ const DetailsSection1 = () => {
                           <a rel="nofollow" target="_blank" href="https://telegram.me/share/url?url=https://24.kg/obschestvo/180523/text=%D0%A3%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%20%D1%88%D0%BA%D0%BE%D0%BB%D1%8B%20%D0%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%BE%D0%BB%D0%B0%20%D0%BF%D1%80%D0%BE%D1%81%D1%8F%D1%82%20%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C%20%D1%83%D0%B2%D0%BE%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0"><i className="fa fa-telegram" aria-hidden="true"></i></a> <a rel="nofollow" target="_blank" href="https://wa.me/?text=https://24.kg/obschestvo/180523/"><i className="fa fa-whatsapp"
                             aria-hidden="true"></i></a> </div>
                       </div>
-                    </noindex>
                     <div className="row mgb30 hidden-print">
                       <div className="col-xs-12 col-sm-8 newsLink">Ссылка: <span id="article-link">https://localhost:3000{history.location.pathname}</span> <a href="javascript:;" className="clipboard" data-clipboard-target="#article-link" data-title="Ссылка скопирована" style={{ fontSize: 13 }} data-original-title=""
                         title=""><i className="fa fa-clipboard"></i></a> <br /> просмотров: {newsDetails.views} </div>
@@ -153,8 +167,8 @@ const DetailsSection1 = () => {
                     <div className="col-xs-12">
                       <div className="one">
                         {newsDetails.comments.length ? (
-                          newsDetails.comments.map(item => (
-                            <React.Fragment key={item.id + "comment"}>
+                          newsDetails.comments.map((item, index) => (
+                            <React.Fragment key={index + "comment"}>
                               <div className="title">
                                 <h4 style={{ fontWeight: 700 }}>{item.full_name}</h4>
                               </div>
@@ -184,7 +198,7 @@ const DetailsSection1 = () => {
                     <div className="col-xs-12">
                       {newsByTag ? (
                         newsByTag.results.map(item => (
-                          <div className="one">
+                          <div className="one" key={item.id}>
                             <div className="title">
                               <Link data-pjax="0" to={`/news-detail${item.id}`}>
                                 <span>{item.title_post}</span>

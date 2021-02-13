@@ -6,7 +6,57 @@ import nurpressLogo from '../img/nurpress-logo.png'
 const Navbar = ({ props }) => {
 
   const { getCurrency, currencies, getCategories, categories } = useContext(newsContext)
+  // const [date, setDate] = useState({})
+  // useEffect(() => {
+  //   let dateNow = new Date()
+  //   let obj = {
+  //     year: dateNow.getFullYear(),
+  //     month: dateNow.getMonth(),
+  //     day: dateNow.getDate()
+  //   }
+  //   switch (obj.month) {
+  //     case 0: return obj.month = '01'
+  //     case 1: return obj.month = '02'
+  //     case 2: return obj.month = '03'
+  //     case 3: return obj.month = '04'
+  //     case 4: return obj.month = '05'
+  //     case 5: return obj.month = '06'
+  //     case 6: return obj.month = '07'
+  //     case 7: return obj.month = '08'
+  //     case 8: return obj.month = '09'
+  //     case 9: return obj.month = '10'
+  //     case 10: return obj.month = '11'
+  //     case 11: return obj.month = '12'
+  //   }
+  //   setDate(obj)
+  //   console.log(obj)
+  // }, [])
   const [date, setDate] = useState({})
+  useEffect(() => {
+    let dateNow = new Date()
+    let obj = {
+      year: dateNow.getFullYear(),
+      month: dateNow.getMonth(),
+      day: dateNow.getDate()
+    }
+    handleDate(obj)
+  }, [])
+  function handleDate(obj) {
+    switch (obj.month) {
+      case 0: return setDate({ ...obj, month: '01' })
+      case 1: return setDate({ ...obj, month: '02' })
+      case 2: return setDate({ ...obj, month: '03' })
+      case 3: return setDate({ ...obj, month: '04' })
+      case 4: return setDate({ ...obj, month: '05' })
+      case 5: return setDate({ ...obj, month: '06' })
+      case 6: return setDate({ ...obj, month: '07' })
+      case 7: return setDate({ ...obj, month: '08' })
+      case 8: return setDate({ ...obj, month: '09' })
+      case 9: return setDate({ ...obj, month: '10' })
+      case 10: return setDate({ ...obj, month: '11' })
+      case 11: return setDate({ ...obj, month: '12' })
+    }
+  }
   useEffect(() => {
     getCategories()
     getCurrency()
@@ -26,44 +76,21 @@ const Navbar = ({ props }) => {
 
   return (
     <>
-      {/* <div className="topBanner hidden-print">
-        <div className="container">
-          <div id="3b_w8"
-            data-ox-phs="{36:{min:1200},51:{min:992,max:1199},52:{min:768,max:991},53:{max:767}}"
-            style={{ display: 'none' }}></div>
-        </div>
-      </div>
-      <div className="bottomBanner hidden-print" style={{ display: 'none' }}>
-        <div className="container"> <a href="#" className="close-banner"><i className="fa fa-times-circle-o"></i></a>
-          <div id="3b_w9"
-            data-ox-phs="{133:{min:1200},134:{min:992,max:1199},135:{min:768,max:991},136:{max:767}}"
-            style={{ display: 'none' }}></div>
-        </div>
-      </div>
-      <div className="side-banners hidden-print">
-        <div className="side-banners-item side-banners-left" style={{ width: 40 }}>
-          <div id="3b_w10"
-            data-ox-phs="{129:{min:1200},130:{min:992,max:1199},131:{min:768,max:991}}"
-            style={{ display: 'none' }}></div>
-        </div>
-        <div className="side-banners-item side-banners-right" style={{ width: 40 }}>
-          <div id="3b_w11"
-            data-ox-phs="{132:{min:1200},130:{min:992,max:1199},131:{min:768,max:991}}"
-            style={{ display: 'none' }}></div>
-        </div>
-      </div> */}
       <header className="row hidden-print">
         <div className="col-lg-2 col-md-2 col-sm-2 col-xs-5 logo">
           <Link to="/">
-            <img className="visible-lg visible-xs" src={nurpressLogo} alt="www.24.kg - КЫРГЫЗСТАН" />
-            {/* <img className="visible-md" src={nurpressLogo} alt="www.24.kg - КЫРГЫЗСТАН" />
-            <img className="visible-sm" src={nurpressLogo} alt="www.24.kg - КЫРГЫЗСТАН" /> */}
+            <img className="visible-lg visible-xs" src={nurpressLogo} alt="nurpress.kg" />
           </Link>
         </div>
         <div className="col-lg-2 col-md-2 col-sm-2 lang hidden-xs">
-          <div> <a href="/kyrgyzcha/">Кыр</a> <a href="/english/">Eng</a> <a href="/archive/ru/" rel="nofollow">Архив</a>
+          <div>
+            <Link to="/">Кыр</Link>
+            <Link to="/">Eng</Link>
+            <Link to="/" rel="nofollow">Архив</Link>
           </div>
-          <div><a href="/about/services.html">Наши услуги</a></div>
+          <div>
+            <a href="callto://+996312625652">Наши услуги</a>
+            </div>
         </div>
         <div className="col-lg-5 col-md-4 col-sm-4 hidden-xs socCont">
           <div className="social">
@@ -94,22 +121,35 @@ const Navbar = ({ props }) => {
         </div>
         <div className="col-lg-3 col-md-4 col-sm-4 col-xs-7">
           <div className="lang hidden-lg hidden-md hidden-sm">
-            <div> <a href="/kyrgyzcha/">Кыр</a> <a href="/english/">Eng</a> <a href="/archive/ru/"
-              rel="nofollow">Архив</a> </div>
-            <div><a href="/about/services.html">Наши услуги</a></div>
+            <div>
+              <Link to="/">Кыр</Link>
+              <Link to="/">Eng</Link>
+              <Link to="/" rel="nofollow">Архив</Link>
+            </div>
+            <div>
+              <a href="callto://+996312625652">Наши услуги</a>
+            </div>
           </div>
           <div className="row">
             <div className="col-xs-7 col-sm-7 col-md-8 pdr-0">
-              <div className="weather"> <span className="hidden-xs"> {date.year}.{date.month}.{date.day}  <span style={{ textTransform: "capitalize" }}>
-              </span> </span> <span className="hidden-sm hidden-md hidden-lg"><span
-                style={{ textTransform: "capitalize" }}> пн. </span> </span><br /> <span
-                  className="hidden-sm hidden-xs">Бишкекское время</span> <span className="hidden-md hidden-lg">Время</span>
+              <div className="weather">
+                <span>Сегодняшняя дата:</span>
+                <br/>
+                <span className="hidden-xs"> {date.year}.{date.month}.{date.day}
+                  <span style={{ textTransform: "capitalize" }}></span>
+                </span>
+                {/* <span className="hidden-sm hidden-md hidden-lg">
+                  <span style={{ textTransform: "capitalize" }}> пн. </span>
+                </span>
+                <br />
+                <span className="hidden-sm hidden-xs">Бишкекское время</span>
+                <span className="hidden-md hidden-lg">Время</span> */}
               </div>
             </div>
             <div className="col-xs-5 col-sm-5 col-md-4 pdl-0 text-right">
               <div className="currency " id="currencies" data-original-title >
-                {currencies.map(item => (
-                  <div key={item.id}>
+                {currencies.map((item, index) => (
+                  <div key={index + "currencies"}>
                     <b>{item.attributes.ISOCode} </b>
                     <span> {item.elements[1].elements[0].text} </span>
                   </div>

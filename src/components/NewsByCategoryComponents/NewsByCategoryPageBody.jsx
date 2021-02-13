@@ -18,9 +18,9 @@ const NewsByCategoryPageBody = ({ props }) => {
       return "Последние новости"
     }
   }
-  useEffect(() => {
-    getNews()
-  }, [])
+  // useEffect(() => {
+  //   getNews()
+  // }, [])
   // _________________________________________
 
   const history = useHistory()
@@ -62,8 +62,8 @@ const NewsByCategoryPageBody = ({ props }) => {
                 </div>
               </>
             ) : (
-              <Loading/>
-            )}
+                <Loading />
+              )}
             <div className="row lineNews">
               <div className="col-xs-12 hidden-print">
                 <div className="lineTitle"> Лента новостей <a href="https://24.kg/english/"
@@ -84,8 +84,8 @@ const NewsByCategoryPageBody = ({ props }) => {
                     </div>
                   ))
                 ) : (
-                  <Loading/>
-                )
+                    <Loading />
+                  )
                 }
                 {
                   newsByCategory ? (
@@ -93,47 +93,18 @@ const NewsByCategoryPageBody = ({ props }) => {
                       <Pagination number={newsByCategory.total_pages} handleClick={handleClick} />
                     </div>
                   ) : (
-                    <Loading/>
-                  )
+                      <Loading />
+                    )
                 }
               </div>
             </div>
           </div>
           <div className="col-sm-4 hidden-xs hidden-print">
-            {/* <div id="d7_w7" className="mgb40 hidden-print"
-              data-ox-phs="{&quot;47&quot;:{&quot;min&quot;:1200},&quot;84&quot;:{&quot;min&quot;:992,&quot;max&quot;:1199},&quot;85&quot;:{&quot;min&quot;:768,&quot;max&quot;:991},&quot;86&quot;:{&quot;max&quot;:767}}">
-              <iframe src="./Власть » www.24.kg - КЫРГЫЗСТАН_files/afr(1).html" width="100%" height="300" frameborder="0"
-                scrolling="no"></iframe>
-            </div> */}
-            <div id="d7_w8" className="mgb40 hidden-print"
-              data-ox-phs="{&quot;48&quot;:{&quot;min&quot;:1200},&quot;87&quot;:{&quot;min&quot;:992,&quot;max&quot;:1199},&quot;88&quot;:{&quot;min&quot;:768,&quot;max&quot;:991},&quot;89&quot;:{&quot;max&quot;:767}}"
-              style={{ display: "none" }}></div>
-            <div className="centerra">
-              <div className="row mgb20">
-                <div className="col-md-7"> Стоимость акций Центерры на бирже в Торонто (TSX)<br /> на 20.01.2021 </div>
-                <div className="col-md-5 centerra-value">
-                  <div className="usd">USD 11,22 <img src="./Власть » www.24.kg - КЫРГЫЗСТАН_files/down.gif" alt="" title="" />
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-7">
-                  <div className="reserv">Золотой резерв КР</div>
-                  <div className="price_text">Стоимость акций КР в "Центерре"</div>
-                </div>
-                <div className="col-md-5 centerra-value">
-                  <div className="price">$868&nbsp;528&nbsp;650</div>
-                </div>
-              </div>
-            </div>
-            <div id="scrollable-banners-sticky-wrapper" className="sticky-wrapper" style={{ height: 0 }}>
-              <div id="scrollable-banners" style={{ width: 360 }}>
-                <div id="d7_w9" className="mgb40 hidden-print"
-                  data-ox-phs="{&quot;49&quot;:{&quot;min&quot;:1200},&quot;90&quot;:{&quot;min&quot;:992,&quot;max&quot;:1199},&quot;91&quot;:{&quot;min&quot;:768,&quot;max&quot;:991},&quot;92&quot;:{&quot;max&quot;:767}}"
-                  style={{ display: "none" }}></div>
-                <div id="d7_w10" className="mgb40 hidden-print"
-                  data-ox-phs="{&quot;137&quot;:{&quot;min&quot;:1200},&quot;138&quot;:{&quot;min&quot;:992,&quot;max&quot;:1199},&quot;139&quot;:{&quot;min&quot;:768,&quot;max&quot;:991},&quot;140&quot;:{&quot;max&quot;:767}}"
-                  style={{ display: "none" }}></div>
+            <div className="row">
+              <div className="col-xs-12 col-num-0 col-num-1">
+                <a href="callto://+996312625652" className="title">
+                  <img src="https://sun9-24.userapi.com/c850532/v850532335/1ac866/al3OEUsv9xQ.jpg" style={{ width: "100%", height: "auto" }} alt="img" />
+                </a>
               </div>
             </div>
           </div>
@@ -142,8 +113,8 @@ const NewsByCategoryPageBody = ({ props }) => {
           news ? (
             <PopulationAndEconomics newsArr={news.results.slice(-4)} />
           ) : (
-            <Loading/>
-          )
+              <Loading />
+            )
         }
       </div>
       <Footer />
