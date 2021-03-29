@@ -22,7 +22,7 @@ const PositionCarouselDemo = ({ news }) => {
       <Carousel dotPosition={dotPosition} autoplay>
         {news.results.slice(-5).map(item => (
           <div key={item.id + "position#$%%^&demo"}>
-            <img id="image-main-page-carousel" style={contentStyle} src={item.post_image[0].image} alt="askat" />
+            <img id="image-main-page-carousel" style={contentStyle} src={item.post_image.length > 0 ? item.post_image[0].image : "popular"} alt="askat" />
             <div>
               <Link to={`/news-detail${item.id}`}>
                 <h3 id="carousel-title-home-page">{item.title_post}</h3>

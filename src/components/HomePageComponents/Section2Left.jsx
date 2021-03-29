@@ -3,7 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 import { newsContext } from '../../contexts/NewsContext';
 import Pagination from '../Pagination';
 import Loading from '../Loading'
+import { Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+
 const Section2Left = () => {
+  const {t, i18n} = useTranslation()
   const { news } = useContext(newsContext)
   function getHours(date) {
     let a = new Date(date)
@@ -41,9 +45,14 @@ const Section2Left = () => {
         <div id="newslist" data-pjax-container data-pjax-push-state data-pjax-timeout="5000">
           <div className="row lineNews">
             <div className="col-xs-12 hidden-print">
-              <div className="lineTitle"> Новости <a href="/english/" className="pull-right btn btn-default newsBries"
+              <div className="lineTitle">
+                <Trans i18nKey="news">
+                  Новости
+              </Trans>
+              {t("news")}
+                {/* <a href="/english/" className="pull-right btn btn-default newsBries"
                 role="button">news brief</a> <a href="/kyrgyzcha/" className="pull-right btn btn-default newsBries"
-                  style={{ marginRight: 5 }} role="button">кыргызча</a>
+                  style={{ marginRight: 5 }} role="button">кыргызча</a> */}
                 <div className="line"></div>
               </div>
             </div>
@@ -52,18 +61,18 @@ const Section2Left = () => {
                 <>
                   {news.results.map((item) => (
                     <div key={item.id} className="one" >
-                      <div style={{color: "#818a93", fontWeight: 700, fontSize: 14}}>{getMonth(item.created)}.{getDate(item.created)} {getHours(item.created)}:{getMinutes(item.created)}</div>
-                      <div className="title"> <Link to={`/news-detail${item.id}`} data-pjax="0">
-                        <span>{item.title_post}</span></Link>
+                      <div style={{ color: "#818a93", fontWeight: 700, fontSize: 14 }}>{getMonth(item.created)}.{getDate(item.created)} {getHours(item.created)}:{getMinutes(item.created)}</div>
+                      <div className="title"> <Link to={`/news-detail${item.slug}`} data-pjax="0">
+                        <span>{item.title}</span></Link>
                       </div>
                     </div>
                   ))}
                   < div className="col-xs-12 hidden-print">
-                    <Pagination number={news.total_pages} handleClick={handleClick}/>
+                    <Pagination number={news.total_pages} handleClick={handleClick} />
                   </div>
                 </>
               ) : (
-                <Loading/>
+                <Loading />
               )
               }
             </div>

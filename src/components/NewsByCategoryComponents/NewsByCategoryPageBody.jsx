@@ -52,7 +52,7 @@ const NewsByCategoryPageBody = ({ props }) => {
                     </div>
                   </div>
                   <div className="col-xs-12 col-md-7 col-md-pull-5 pic"><img
-                    src={newsByCategory.results.slice(-1)[0].post_image[0].image}
+                    src={newsByCategory.results.slice(-1)[0].post_image.length > 0 ? newsByCategory.results.slice(-1)[0].post_image[0].image : "popular"}
                     alt="Кто станет оппозицией Садыру Жапарову" /></div>
                   <div className="col-xs-12 col-md-5 visible-sm visible-xs">
                     <div className="descr"> <a

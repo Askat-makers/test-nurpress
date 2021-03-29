@@ -1,36 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useHistory } from 'react-router-dom';
 import { newsContext } from '../contexts/NewsContext';
 import nurpressLogo from '../img/nurpress-logo.png'
 
 const Navbar = ({ props }) => {
 
+  const { t, i18n } = useTranslation()
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language)
+  }
+
   const { getCurrency, currencies, getCategories, categories } = useContext(newsContext)
-  // const [date, setDate] = useState({})
-  // useEffect(() => {
-  //   let dateNow = new Date()
-  //   let obj = {
-  //     year: dateNow.getFullYear(),
-  //     month: dateNow.getMonth(),
-  //     day: dateNow.getDate()
-  //   }
-  //   switch (obj.month) {
-  //     case 0: return obj.month = '01'
-  //     case 1: return obj.month = '02'
-  //     case 2: return obj.month = '03'
-  //     case 3: return obj.month = '04'
-  //     case 4: return obj.month = '05'
-  //     case 5: return obj.month = '06'
-  //     case 6: return obj.month = '07'
-  //     case 7: return obj.month = '08'
-  //     case 8: return obj.month = '09'
-  //     case 9: return obj.month = '10'
-  //     case 10: return obj.month = '11'
-  //     case 11: return obj.month = '12'
-  //   }
-  //   setDate(obj)
-  //   console.log(obj)
-  // }, [])
   const [date, setDate] = useState({})
   useEffect(() => {
     let dateNow = new Date()
@@ -61,7 +43,6 @@ const Navbar = ({ props }) => {
     getCategories()
     getCurrency()
   }, [])
-
   // _____________________________________________________________________________
   const history = useHistory()
   const [searchWord, setSearchWord] = useState("")
@@ -84,13 +65,13 @@ const Navbar = ({ props }) => {
         </div>
         <div className="col-lg-2 col-md-2 col-sm-2 lang hidden-xs">
           <div>
-            <Link to="/">Кыр</Link>
-            <Link to="/">Eng</Link>
+            <span onClick={() => changeLanguage("kg")}>Кыр</span>
+            <Link to="/" onClick={() => changeLanguage("ru")}>RU</Link>
             <Link to="/" rel="nofollow">Архив</Link>
           </div>
           <div>
             <a href="callto://+996312625652">Наши услуги</a>
-            </div>
+          </div>
         </div>
         <div className="col-lg-5 col-md-4 col-sm-4 hidden-xs socCont">
           <div className="social">
@@ -134,16 +115,10 @@ const Navbar = ({ props }) => {
             <div className="col-xs-7 col-sm-7 col-md-8 pdr-0">
               <div className="weather">
                 <span>Сегодняшняя дата:</span>
-                <br/>
+                <br />
                 <span className="hidden-xs"> {date.year}.{date.month}.{date.day}
                   <span style={{ textTransform: "capitalize" }}></span>
                 </span>
-                {/* <span className="hidden-sm hidden-md hidden-lg">
-                  <span style={{ textTransform: "capitalize" }}> пн. </span>
-                </span>
-                <br />
-                <span className="hidden-sm hidden-xs">Бишкекское время</span>
-                <span className="hidden-md hidden-lg">Время</span> */}
               </div>
             </div>
             <div className="col-xs-5 col-sm-5 col-md-4 pdl-0 text-right">
@@ -178,7 +153,7 @@ const Navbar = ({ props }) => {
           <ul className="nav navbar-nav">
             {categories ? (
               categories.results.map(item => (
-                <li key={item.id}><Link to={`/news-by-category/${item.id}`}><span>{item.title_category}</span></Link></li>
+                <li key={item.id}><Link to={`/news-by-category/${item.id}`}><span>{item.title}</span></Link></li>
               ))
             ) : (null)}
           </ul>

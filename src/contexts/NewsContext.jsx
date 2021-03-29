@@ -47,20 +47,21 @@ const NewsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
   async function getCurrency() {
-    const { data } = await axios(`${CURRENCY_API}`)
-    var convert = require('xml-js');
-    let xml = data
-    let result2 = convert.xml2json(xml, { compact: false, spaces: 0 });
-    let res3 = JSON.parse(result2)
-    let { elements: [first] } = res3
-    let array = first.elements
-    dispatch({
-      type: "GET_CURRENCY",
-      payload: array
-    })
+    // const { data } = await axios(`${CURRENCY_API}`)
+    // var convert = require('xml-js');
+    // let xml = data
+    // let result2 = convert.xml2json(xml, { compact: false, spaces: 0 });
+    // let res3 = JSON.parse(result2)
+    // let { elements: [first] } = res3
+    // let array = first.elements
+    // dispatch({
+    //   type: "GET_CURRENCY",
+    //   payload: array
+    // })
   }
   async function getNews(page) {
     const { data } = await axios(`${NEWS_API}/posts/${page}`)
+
     dispatch({
       type: "GET_NEWS",
       payload: data

@@ -17,13 +17,13 @@ const Section2Right = () => {
               <>
                 <div className="col-xs-6 col-num-0">
                   <Link to={`/news-detail${news.results[news.results.length - 1].id}`} className="title">
-                    <img src={news.results[news.results.length - 1].post_image[0].image} alt="img" />
+                    <img src={news.results[news.results.length - 1].post_image.length > 0 ? news.results[news.results.length - 1].post_image[0].image : "popular"} alt="img" />
                     <span>{news.results[news.results.length - 1].title_post}</span>
                   </Link>
                 </div>
                 <div className="col-xs-6 col-num-0">
                   <Link to={`/news-detail${news.results[news.results.length - 2].id}`} className="title">
-                    <img src={news.results[news.results.length - 2].post_image[0].image} alt="img" />
+                    <img src={news.results[news.results.length - 1].post_image.length > 0 ? news.results[news.results.length - 1].post_image[0].image : "popular"} alt="img" />
                     <span>{news.results[news.results.length - 2].title_post}</span>
                   </Link>
                 </div>
@@ -41,7 +41,7 @@ const Section2Right = () => {
                 news.results.slice(-10).map(item => (
                   <div key={item.id} className="col-xs-6 col-num-0">
                     <Link to={`/news-detail${item.id}`} className="title">
-                      <img id="section-2-right-img" src={item.post_image[0].image} alt="img" />
+                      <img id="section-2-right-img" src={item.post_image.length > 0 ? item.post_image[0].image : "popular"} alt="img" />
                       <span>{item.title_post}</span>
                     </Link>
                   </div>
